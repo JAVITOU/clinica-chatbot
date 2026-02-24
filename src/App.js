@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Clínica San José - Asistente Virtual</h1>
+        <h1>Clínica UDB - Asistente Virtual</h1>
       </header>
       <main>
         <Chatbot />

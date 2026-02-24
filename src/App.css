@@ -207,11 +207,18 @@
 /* ===== ÁREA DE ENTRADA ===== */
 .input-area {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 8px;
   padding: 15px 20px;
   background: #ffffff;
   border-top: 1px solid #e0e0e0;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
   align-items: center;
+  width: 100%;
 }
 
 .input-area input {
@@ -235,13 +242,20 @@
   color: #aaa;
 }
 
+.button-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
 .input-area button {
-  padding: 12px 24px;
+  padding: 10px 16px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
   border-radius: 25px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -403,13 +417,21 @@
 
   .input-area {
     padding: 12px 15px;
+    gap: 6px;
+  }
+
+  .input-row {
     gap: 8px;
+  }
+
+  .button-row {
+    gap: 6px;
   }
 
   .input-area input,
   .input-area button {
-    padding: 10px 14px;
-    font-size: 13px;
+    padding: 9px 12px;
+    font-size: 12px;
   }
 
   .quick-suggestions {
@@ -428,10 +450,10 @@
 .message-content {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  white-space: pre-wrap;
+  gap: 2px;
+  white-space: normal;
   word-break: break-word;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 .message-content b {
@@ -448,18 +470,19 @@
 .message-content br {
   content: '';
   display: block;
-  height: 8px;
+  height: 2px;
 }
 
-/* Estilos para listas si se usan */
+/* Estilos para listas */
 .message-content ul,
 .message-content ol {
-  margin: 8px 0;
-  padding-left: 20px;
+  margin: 2px 0;
+  padding-left: 24px;
 }
 
 .message-content li {
-  margin: 4px 0;
+  margin: 2px 0;
+  line-height: 1.4;
 }
 
 @media (max-width: 480px) {
@@ -476,15 +499,28 @@
 
   .input-area {
     flex-direction: column;
-    padding: 10px 12px;
+    padding: 8px 10px;
+  }
+
+  .input-row {
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .button-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
   }
 
   .input-area input {
-    width: 100%;
+    padding: 8px 10px;
+    font-size: 12px;
   }
 
   .input-area button {
-    width: 100%;
+    padding: 8px 10px;
+    font-size: 10px;
   }
 
   .quick-suggestions {
@@ -495,4 +531,41 @@
   .suggestion-btn {
     width: 100%;
   }
+}
+
+/* ===== BOTONES DE ACCIONES RÁPIDAS ===== */
+.quick-actions-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+
+.quick-actions-container button {
+  padding: 10px 16px !important;
+  border: none !important;
+  border-radius: 25px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.quick-actions-container button:hover:not(:disabled) {
+  transform: scale(1.05) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.quick-actions-container button:active:not(:disabled) {
+  transform: scale(0.98) !important;
+}
+
+/* Dropdown menu for medical orientation */
+.medical-menu-container {
+  position: relative;
+  display: inline-block;
 }
