@@ -122,7 +122,7 @@ const MedicalOrientationMenu = ({ onSelect, isOpen, onToggle }) => {
             <button
               key={index}
               onClick={() => {
-                onSelect(`Tengo ${symptom.toLowerCase()}`);
+                onSelect(symptom);
                 onToggle();
               }}
               style={{
